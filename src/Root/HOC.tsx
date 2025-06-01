@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useFetchUser } from "../globalHooks";
-import GlobalHeader from "./GlobalHeader";
 import CopyRightFooter from "./CopyRightFooter";
 
 const AppWrapperHOC = <P extends object>(WrappedComponent: React.ComponentType<P>) => {
@@ -19,7 +18,6 @@ const AppWrapperHOC = <P extends object>(WrappedComponent: React.ComponentType<P
 
     return (
       <>
-      <GlobalHeader />
       <WrappedComponent {...props} userInfo={userInfo} />
       <CopyRightFooter/>
       </>
