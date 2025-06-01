@@ -3,7 +3,6 @@ import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 import SignInPage from '../features/Signin';
 import SignUpPage from '../features/Signup';
 import DashboardLayout from '../layout/DashboardLayout';
-import FormBuilderPage from '../features/FormBuilderPage';
 import BuilderPage from '../features/BuilderPage';
 import Unauthorized from '../components/Unauthorised';
 import ProtectedRoute from '../routes/ProtectedRoute';
@@ -58,21 +57,6 @@ const routes: RouteObject[] = [
         </SignedOut>
       </>
     ),
-  },
-  {
-    path: '/form-builder',
-    element: (
-      <>
-        <SignedIn>
-          <ProtectedRoute allowedRoles={["admin", "editor"]}>
-            <FormBuilderPage />
-          </ProtectedRoute>
-        </SignedIn>
-        <SignedOut>
-          <RedirectToSignIn />
-        </SignedOut>
-      </>
-    )
   },
   {
     path: '/builder/:id',
